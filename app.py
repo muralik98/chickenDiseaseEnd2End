@@ -32,7 +32,7 @@ def trainRoute():
 
 
 
-@app.route("/predict", methods=['POST'])
+@app.route("/predict", methods=['GET','POST'])
 @cross_origin()
 def predictRoute():
     image = request.json['image']
@@ -43,7 +43,7 @@ def predictRoute():
 
 if __name__ == "__main__":
     clApp = ClientApp()
-    # app.run(host='0.0.0.0', port=8080) #local host
+    app.run(host='0.0.0.0', port=8080) #local host
     # app.run(host='0.0.0.0', port=8080) #for AWS
-    app.run(host='0.0.0.0', port=80) #for AZURE
+    #app.run(host='0.0.0.0', port=80) #for AZURE
 
